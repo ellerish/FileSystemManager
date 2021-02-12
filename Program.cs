@@ -7,10 +7,8 @@ namespace FileSystemManager
         static void Main(string[] args)
         {
             var m = new Menu();
-            m.mainMenu();
+              m.mainMenu();
         }
-
-      
     }
 
 
