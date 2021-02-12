@@ -6,7 +6,12 @@ namespace FileSystemManager
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var m = new Menu();
+            m.mainMenu();
         }
+
+      
     }
+
+
 }
