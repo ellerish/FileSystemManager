@@ -6,11 +6,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="log\" />
     <Folder Include="resources\Files\JfifFiles\" />
     <Folder Include="resources\Files\JpegFiles\" />
     <Folder Include="resources\Files\JpgFiles\" />
     <Folder Include="resources\Files\PngFiles\" />
     <Folder Include="resources\Files\TxtFiles\" />
   </ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Legacy2CPSWorkaround" Version="1.0.0">
+			<PrivateAssets>All</PrivateAssets>
+		</PackageReference>
+	</ItemGroup>
 
 </Project>

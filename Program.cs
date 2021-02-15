@@ -6,8 +6,13 @@ namespace FileSystemManager
     {
         static void Main(string[] args)
         {
-            var m = new Menu();
-              m.mainMenu();
+            var l = new FileLogger();
+            l.Log("Tester4");
+            l.Log("Mama");
+            l.Log("     ");
+
+          /*  var m = new Menu();
+              m.mainMenu();*/
         }
     }
 
