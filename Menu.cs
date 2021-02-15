@@ -7,6 +7,7 @@ namespace FileSystemManager
     class Menu
     {
         public static int inputChoice = 0;
+        FileService service = new FileService();
 
         public void mainMenu()
         {
@@ -17,13 +18,13 @@ namespace FileSystemManager
             } while (true);
         }
 
-        public static void welcome()
+        public void welcome()
         {
             Console.WriteLine("------------------------\n");
-            Console.WriteLine("Enter 1 to see the menu or enter 2 to exit)");
+            Console.WriteLine("Enter 1 to see the menu or enter 2 to exit ");
             Console.WriteLine("------------------------\n");
-            inputChoice = checkValidInput(1, 2);
-            //Checks for exit value (2)
+            inputChoice = checkValidInput(1,2);
+            //Checks for exit value (0)
             if(inputChoice == 2)
             {
                 Environment.Exit(2);
@@ -31,10 +32,10 @@ namespace FileSystemManager
             firstMenu();
         }
 
-        public static void firstMenu()
+        public void firstMenu()
         {
 
-            FileService service = new FileService();
+           // FileService service = new FileService();
             Console.WriteLine("Choose from menu");
             Console.WriteLine("1. List all files");
             Console.WriteLine("2. List files by extension");
@@ -62,7 +63,7 @@ namespace FileSystemManager
 
         }
 
-        public static void secondMenu()
+        public void secondMenu()
         {
             Console.WriteLine("Select: ");
             Console.WriteLine("1. jpeg");
@@ -73,19 +74,19 @@ namespace FileSystemManager
             switch (inputChoice)
             {
                 case 1:
-                    Console.Write("Choosen jpeg");
+                    service.listFilesByExtension("jpeg");
                     break;
 
                 case 2:
-                    Console.Write("Choosen jfif");
+                    service.listFilesByExtension("jfif");
                     break;
 
                 case 3:
-                    Console.Write("Choosen png");
+                    service.listFilesByExtension("png");
                     break;
 
                 case 4:
-                    Console.Write("Choosen jpg");
+                    service.listFilesByExtension("jpg");
                     break;
 
                 default:
@@ -95,11 +96,10 @@ namespace FileSystemManager
 
         }
 
-        public static void thirdMenu()
+        public void thirdMenu()
         {
-            FileService service = new FileService();
             Console.WriteLine("Select: ");
-            Console.WriteLine("1. Get ame of file");
+            Console.WriteLine("1. Get name of file");
             Console.WriteLine("2. Get number of lines of file");
             Console.WriteLine("3. Search for word in file");
             inputChoice = checkValidInput(1, 3);
@@ -123,15 +123,7 @@ namespace FileSystemManager
             }
         }
 
-
-
-        /* Menu :
-         * 1 : List all files
-         * 2: List all files by extension? - new menu. Show extension - then list all files 
-         * 3. Play with dractula text - new manu 
-         * 
-         */
-        //Provides dynamic integer input prompting //from course
+        //Provides dynamic integer input prompting //from course resource
         public static int checkValidInput(int min, int max)
         {
             var input = Console.ReadLine();

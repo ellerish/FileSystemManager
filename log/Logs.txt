@@ -19,3 +19,4 @@ Time of execution: 2021-02-15T15:55:09: function executed : Get word: baby in fi
 Time of execution: 2021-02-15T15:56:20: function executed : Get word: mama in file, found 1 times, 2963 ms = duration of execution: 
 Time of execution: 2021-02-15T16:09:18: function executed : Get word: hei in file, found 219 times, 2594 ms = duration of execution: 
 Time of execution: 2021-02-15T16:11:50: function executed : Get file name: Dracula.txt, 8 ms = duration of execution: 
+Time of execution: 2021-02-15T16:18:51: function executed : List all files,  34 ms = duration of execution 

@@ -41,17 +41,16 @@ namespace FileSystemManager
                             $"duration of execution ");
                         streamWriter.Close();
                     }
-                } catch (FileNotFoundException ex)
+                } 
+                catch (FileNotFoundException ex)
                 {
                     Console.WriteLine("Could not write to file dosent exist");
                     Console.WriteLine(ex.Message);
-
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
                 }
-            
         }
     }
 }

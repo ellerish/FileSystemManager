@@ -9,19 +9,25 @@ namespace FileSystemManager
     class FileService
     {
         FileInfo fileTest = new FileInfo(@"C:/Users/erisha/desktop/fsm/FileSystemManager/resources/Dracula.txt");
+        String directoryPath = @"C:/Users/erisha/desktop/fsm/FileSystemManager/resources/";
         FileLogger fileLogger = new FileLogger();
         Stopwatch watch = new System.Diagnostics.Stopwatch();
 
         public void listAllFiles()
         {
             watch.Start();
-            string dir = @"C:/Users/erisha/desktop/fsm/FileSystemManager/resources/";
-
             // get list of files
-            string[] files = Directory.GetFiles(dir);
+            string[] files = Directory.GetFiles(directoryPath);
             Console.WriteLine(String.Join(Environment.NewLine, files));
             watch.Stop();
             fileLogger.Log($"List all files,  {watch.ElapsedMilliseconds} ms");
+        }
+
+        public void listFilesByExtension(String extension)
+        {
+            string[] files = Directory.GetFiles(directoryPath, $"*.{extension}", SearchOption.AllDirectories);
+            Console.WriteLine(String.Join(Environment.NewLine, files));
+
         }
 
         public void getFileInfoName()
@@ -40,6 +46,7 @@ namespace FileSystemManager
 
         public void getLinesOfFile()
         {
+            watch.Start();
             var lineCount = 0;
             using (StreamReader reader = File.OpenText($"{fileTest}"))
             {
@@ -49,7 +56,8 @@ namespace FileSystemManager
                 }
             }
             Console.WriteLine($"File contains {lineCount} lines");
-            fileLogger.Log($"get line of file");
+            watch.Stop();
+            fileLogger.Log($"Get lines of file: {lineCount}, {watch.ElapsedMilliseconds} ms");
 
         }
 
