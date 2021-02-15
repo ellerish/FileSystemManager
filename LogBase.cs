@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.IO;
+using System.Diagnostics;
+using System.Threading;
 
 /***
-   * write to a file, placed in a appropaite folder
-   * Log all the result from file service, log the meassge, time stamp, 
-   * execute duration
+   * Log class, write to file Log.txt in log folder. 
+   * Logs all the result from file service, log the meassge, time stamp, execute duration
    * 
    * */
 
@@ -19,9 +18,8 @@ namespace FileSystemManager
 
     public class FileLogger : LogBase
     {
-        public string filePath = @"C:/Users/erisha/desktop/fsm/FileSystemManager/log/TestLog.txt";
+        public string filePath = @"C:/Users/erisha/desktop/fsm/FileSystemManager/log/Logs.txt";
         String now = GetTime(DateTime.Now);
-        int duration = GetDuration();
 
         public static String GetTime(DateTime value)
         {
@@ -30,18 +28,17 @@ namespace FileSystemManager
 
         public static int GetDuration() 
         {
-            return 2;
+            return 0;
         }
 
         public override void Log(string message)
         {
-     
                 try
                 {
                     using (StreamWriter streamWriter = new StreamWriter(filePath, true))
                     {
-                        streamWriter.WriteLine(message);
-                        streamWriter.WriteLine($"Time of execution: {now} duration of execution: {duration}");
+                        streamWriter.WriteLine($"Time of execution: {now}: function executed : {message} = " +
+                            $"duration of execution ");
                         streamWriter.Close();
                     }
                 } catch (FileNotFoundException ex)

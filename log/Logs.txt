@@ -10,3 +10,12 @@ File name is Dracula.txt
 Time of execution: 2021-02-15T14:38:34 duration of execution: 2
 Time of execution: 2021-02-15T14:40:42 : File name is Dracula.txt : duration of execution: 2
 Time of execution: 2021-02-15T14:55:57 , File name is Dracula.txt , duration of execution: 0
+Time of execution: 2021-02-15T15:05:05 : List all files : duration of execution: 0
+Time of execution: 2021-02-15T15:08:12: function executed : Get file name: Dracula.txt : duration of execution: 0
+Time of execution: 2021-02-15T15:08:20: function executed : get haha of file : duration of execution: 0
+Time of execution: 2021-02-15T15:08:41: function executed : get line of file : duration of execution: 0
+Time of execution: 2021-02-15T15:42:41: function executed : Get word: home in file, found 83 times +  1742 ms : duration of execution: 0
+Time of execution: 2021-02-15T15:55:09: function executed : Get word: baby in file, found 3 times, 3250 ms : duration of execution: 
+Time of execution: 2021-02-15T15:56:20: function executed : Get word: mama in file, found 1 times, 2963 ms = duration of execution: 
+Time of execution: 2021-02-15T16:09:18: function executed : Get word: hei in file, found 219 times, 2594 ms = duration of execution: 
+Time of execution: 2021-02-15T16:11:50: function executed : Get file name: Dracula.txt, 8 ms = duration of execution: 

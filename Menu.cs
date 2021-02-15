@@ -7,6 +7,7 @@ namespace FileSystemManager
     class Menu
     {
         public static int inputChoice = 0;
+
         public void mainMenu()
         {
             do
@@ -32,8 +33,8 @@ namespace FileSystemManager
 
         public static void firstMenu()
         {
-          
-            var f = new FileService();
+
+            FileService service = new FileService();
             Console.WriteLine("Choose from menu");
             Console.WriteLine("1. List all files");
             Console.WriteLine("2. List files by extension");
@@ -43,7 +44,7 @@ namespace FileSystemManager
             {
                 case 1:
                     Console.Write("List all files \n");
-                    f.listAllFiles();
+                    service.listAllFiles();
                     break;
 
                 case 2:
@@ -51,9 +52,7 @@ namespace FileSystemManager
                     break;
 
                 case 3:
-                    // thirdMenu();
-                    f.getFileInfoName();
-                    f.getLinesOfFile();
+                     thirdMenu();
                     break;
                 
                default:
@@ -96,12 +95,32 @@ namespace FileSystemManager
 
         }
 
-        public void thirdMenu()
+        public static void thirdMenu()
         {
+            FileService service = new FileService();
             Console.WriteLine("Select: ");
-            Console.WriteLine("1. GetName of file");
-            Console.WriteLine("2. Get Lines of file");
+            Console.WriteLine("1. Get ame of file");
+            Console.WriteLine("2. Get number of lines of file");
             Console.WriteLine("3. Search for word in file");
+            inputChoice = checkValidInput(1, 3);
+            switch (inputChoice)
+            {
+                case 1:
+                    service.getFileInfoName();
+                    break;
+
+                case 2:
+                    service.getLinesOfFile();
+                    break;
+
+                case 3:
+                    service.getWordInText();
+                    break;
+
+                default:
+                    Console.Write("Input correct option\n");
+                    break;
+            }
         }
 
 
@@ -112,9 +131,7 @@ namespace FileSystemManager
          * 3. Play with dractula text - new manu 
          * 
          */
-
-
-        //Provides dynamic integer input prompting
+        //Provides dynamic integer input prompting //from course
         public static int checkValidInput(int min, int max)
         {
             var input = Console.ReadLine();

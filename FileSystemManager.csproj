@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="log\" />
     <Folder Include="resources\Files\JfifFiles\" />
     <Folder Include="resources\Files\JpegFiles\" />
     <Folder Include="resources\Files\JpgFiles\" />
