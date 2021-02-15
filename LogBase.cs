@@ -18,7 +18,7 @@ namespace FileSystemManager
 
     public class FileLogger : LogBase
     {
-        public string filePath = @"C:/Users/erisha/desktop/fsm/FileSystemManager/log/Logs.txt";
+        public string filePath = @$".\log\Logs.txt";
         String now = GetTime(DateTime.Now);
 
         public static String GetTime(DateTime value)

@@ -5,14 +5,6 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="resources\Files\JfifFiles\" />
-    <Folder Include="resources\Files\JpegFiles\" />
-    <Folder Include="resources\Files\JpgFiles\" />
-    <Folder Include="resources\Files\PngFiles\" />
-    <Folder Include="resources\Files\TxtFiles\" />
-  </ItemGroup>
-
 	<ItemGroup>
 		<PackageReference Include="Legacy2CPSWorkaround" Version="1.0.0">
 			<PrivateAssets>All</PrivateAssets>

@@ -8,10 +8,12 @@ namespace FileSystemManager
 {
     class FileService
     {
-        FileInfo fileTest = new FileInfo(@"C:/Users/erisha/desktop/fsm/FileSystemManager/resources/Dracula.txt");
-        String directoryPath = @"C:/Users/erisha/desktop/fsm/FileSystemManager/resources/";
+        FileInfo fileTest = new FileInfo(@$"{directoryPath}\Dracula.txt");
+        public static String directoryPath = @".\resources";
+
+
         FileLogger fileLogger = new FileLogger();
-        Stopwatch watch = new System.Diagnostics.Stopwatch();
+        Stopwatch watch = new Stopwatch();
 
         public void listAllFiles()
         {
@@ -25,9 +27,16 @@ namespace FileSystemManager
 
         public void listFilesByExtension(String extension)
         {
+            watch.Start();
             string[] files = Directory.GetFiles(directoryPath, $"*.{extension}", SearchOption.AllDirectories);
-            Console.WriteLine(String.Join(Environment.NewLine, files));
+            foreach (string file in files)
+            {
+                Console.WriteLine(file);
+            }
+            
 
+            watch.Stop();
+            fileLogger.Log($"List all files of extenstion {extension}, {watch.ElapsedMilliseconds} ms");
         }
 
         public void getFileInfoName()
@@ -68,7 +77,7 @@ namespace FileSystemManager
             String word = Console.ReadLine().Trim();
             using (StreamReader reader = File.OpenText($"{fileTest}"))
             {
-                //counts the number of times wordResponse is found.
+                //counts the number of times word is found.
                 int wordCount = 0; 
                 int lineNumber = 0;
                 while (!reader.EndOfStream)

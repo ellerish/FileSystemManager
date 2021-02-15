@@ -35,7 +35,6 @@ namespace FileSystemManager
         public void firstMenu()
         {
 
-           // FileService service = new FileService();
             Console.WriteLine("Choose from menu");
             Console.WriteLine("1. List all files");
             Console.WriteLine("2. List files by extension");
