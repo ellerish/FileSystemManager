@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
+
+/*
+ * FileSystemManager
+ */
 
 namespace FileSystemManager
 {
@@ -11,16 +16,22 @@ namespace FileSystemManager
         FileInfo fileTest = new FileInfo(@$"{directoryPath}\Dracula.txt");
         public static String directoryPath = @".\resources";
 
-
+        //Logging time of execution and duration to log.txt
         FileLogger fileLogger = new FileLogger();
         Stopwatch watch = new Stopwatch();
 
         public void listAllFiles()
         {
             watch.Start();
-            // get list of files
+            //list of files
             string[] files = Directory.GetFiles(directoryPath);
-            Console.WriteLine(String.Join(Environment.NewLine, files));
+           // FileInfo f = new FileInfo(files);
+            foreach (string file in files)
+            {
+                //Get name of each file
+                FileInfo fileInfo = new FileInfo(file);
+                Console.WriteLine($"{fileInfo.Name}");
+            }
             watch.Stop();
             fileLogger.Log($"List all files,  {watch.ElapsedMilliseconds} ms");
         }
@@ -28,24 +39,25 @@ namespace FileSystemManager
         public void listFilesByExtension(String extension)
         {
             watch.Start();
+            //List by extenstion //User provides extension input
             string[] files = Directory.GetFiles(directoryPath, $"*.{extension}", SearchOption.AllDirectories);
             foreach (string file in files)
             {
-                Console.WriteLine(file);
+                FileInfo fileInfo = new FileInfo(file);
+                Console.WriteLine($"{fileInfo.Name}");
             }
-            
-
             watch.Stop();
             fileLogger.Log($"List all files of extenstion {extension}, {watch.ElapsedMilliseconds} ms");
         }
 
-        public void getFileInfoName()
+        public void getFileNameAndSize()
         {
             watch.Start();
-            Console.WriteLine($"The file name is:  {fileTest.Name } can be found in {fileTest.Directory}" +
-                $" and is {fileTest.Length} long ");
+            //Get name and size of Dracula file. 
+            Console.WriteLine($"\n The file name is: {fileTest.Name} and the size of file is: {fileTest.Length} bytes." +
+                $" The file can be found in directory: {fileTest.Directory}");
             watch.Stop();
-            fileLogger.Log($"Get file name: {fileTest.Name }, {watch.ElapsedMilliseconds} ms");
+            fileLogger.Log($"Get file name: {fileTest.Name}, {watch.ElapsedMilliseconds} ms");
         }
 
         public void getFileSize()
@@ -56,6 +68,7 @@ namespace FileSystemManager
         public void getLinesOfFile()
         {
             watch.Start();
+            // Get lines of file using streamreader. Looping through every line and update linecount till end
             var lineCount = 0;
             using (StreamReader reader = File.OpenText($"{fileTest}"))
             {
@@ -74,45 +87,34 @@ namespace FileSystemManager
         {
             watch.Start();
             Console.Write("Enter word to search for...\n");
-            String word = Console.ReadLine().Trim();
+            String word = Console.ReadLine().Trim().ToLower();
             using (StreamReader reader = File.OpenText($"{fileTest}"))
             {
                 //counts the number of times word is found.
                 int wordCount = 0; 
-                int lineNumber = 0;
                 while (!reader.EndOfStream)
                 {
-                    string line = reader.ReadLine();
-                    lineNumber++;
-                    int position = line.IndexOf(word.Trim());
-                    if (position != -1)
+                    //Check matches for input word
+                    string lineCheck = reader.ReadLine();
+                    bool match = Regex.IsMatch(lineCheck, $@"\b{word.ToLower()}\b", RegexOptions.IgnoreCase);
+                    if (match)
                     {
                         wordCount++;
                     }
                 }
+                //No macthes
                 if (wordCount == 0)
                 {
-                    Console.WriteLine("your word was not found!");
+                    Console.WriteLine($"\n Your word: {word} was not found in the text!");
                 }
                 else
                 {
-                    Console.WriteLine($"File contains {wordCount} of the word {word}");
+                    Console.WriteLine($"\n File contains the word:  {word}, the word appears {wordCount} times!");
                 }
                 watch.Stop();
                 fileLogger.Log($"Get word: {word} in file, found {wordCount} times, {watch.ElapsedMilliseconds} ms");
             }
         }
-
-        /*
-         * Method List all files
-         * Method Get spesific file by extension, list all files by extension
-         * 
-         * Text file : give info
-         *  - name of file, size of file, how many lines the files has, 
-         *  - search for a spesific word in the text, how many times a spesific word appears
-         * 
-         * 
-         * */
 
     }
 }

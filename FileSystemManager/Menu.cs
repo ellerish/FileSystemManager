@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace FileSystemManager
 {
     class Menu
@@ -22,7 +23,7 @@ namespace FileSystemManager
         {
             Console.WriteLine("------------------------\n");
             Console.WriteLine("Enter 1 to see the menu or enter 2 to exit ");
-            Console.WriteLine("------------------------\n");
+            Console.WriteLine("\n------------------------");
             inputChoice = checkValidInput(1,2);
             //Checks for exit value (0)
             if(inputChoice == 2)
@@ -98,14 +99,14 @@ namespace FileSystemManager
         public void thirdMenu()
         {
             Console.WriteLine("Select: ");
-            Console.WriteLine("1. Get name of file");
+            Console.WriteLine("1. Get name and size of file");
             Console.WriteLine("2. Get number of lines of file");
             Console.WriteLine("3. Search for word in file");
             inputChoice = checkValidInput(1, 3);
             switch (inputChoice)
             {
                 case 1:
-                    service.getFileInfoName();
+                    service.getFileNameAndSize();
                     break;
 
                 case 2:

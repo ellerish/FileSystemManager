@@ -6,8 +6,12 @@ FIx read me
 Fix path
 
 # File System Manager
-C# Console Application to manage and manipulate files
+C# Console Application to manage and manipulate files. Resouces provided.
+
+## Setup
+- Clone repository
+- Open project
+- 
 
 ## Features
 
-## Setup
