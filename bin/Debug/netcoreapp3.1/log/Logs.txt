@@ -1,0 +1,2 @@
+Time of execution: 2021-02-15T19:28:19: function executed : List all files of extenstion jpeg, 42 ms = duration of execution 
+Time of execution: 2021-02-15T19:28:19: function executed : List all files,  43 ms = duration of execution 

@@ -1,0 +1,13 @@
+C:\Users\erisha\Desktop\fsm\FileSystemManager\bin\Debug\netcoreapp3.1\FileSystemManager.exe
+C:\Users\erisha\Desktop\fsm\FileSystemManager\bin\Debug\netcoreapp3.1\FileSystemManager.deps.json
+C:\Users\erisha\Desktop\fsm\FileSystemManager\bin\Debug\netcoreapp3.1\FileSystemManager.runtimeconfig.json
+C:\Users\erisha\Desktop\fsm\FileSystemManager\bin\Debug\netcoreapp3.1\FileSystemManager.runtimeconfig.dev.json
+C:\Users\erisha\Desktop\fsm\FileSystemManager\bin\Debug\netcoreapp3.1\FileSystemManager.dll
+C:\Users\erisha\Desktop\fsm\FileSystemManager\bin\Debug\netcoreapp3.1\FileSystemManager.pdb
+C:\Users\erisha\Desktop\fsm\FileSystemManager\obj\Debug\netcoreapp3.1\FileSystemManager.AssemblyInfoInputs.cache
+C:\Users\erisha\Desktop\fsm\FileSystemManager\obj\Debug\netcoreapp3.1\FileSystemManager.AssemblyInfo.cs
+C:\Users\erisha\Desktop\fsm\FileSystemManager\obj\Debug\netcoreapp3.1\FileSystemManager.csproj.CoreCompileInputs.cache
+C:\Users\erisha\Desktop\fsm\FileSystemManager\obj\Debug\netcoreapp3.1\FileSystemManager.dll
+C:\Users\erisha\Desktop\fsm\FileSystemManager\obj\Debug\netcoreapp3.1\FileSystemManager.pdb
+C:\Users\erisha\Desktop\fsm\FileSystemManager\obj\Debug\netcoreapp3.1\FileSystemManager.genruntimeconfig.cache
+C:\Users\erisha\Desktop\fsm\FileSystemManager\obj\Debug\netcoreapp3.1\FileSystemManager.csprojAssemblyReference.cache
