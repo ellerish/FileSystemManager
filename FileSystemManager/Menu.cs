@@ -12,6 +12,7 @@ namespace FileSystemManager
 
         public void mainMenu()
         {
+            //Continous prompt
             do
             {
                 welcome();
@@ -25,7 +26,7 @@ namespace FileSystemManager
             Console.WriteLine("Enter 1 to see the menu or enter 2 to exit ");
             Console.WriteLine("\n------------------------");
             inputChoice = checkValidInput(1,2);
-            //Checks for exit value (0)
+            //Checks for exit value (2)
             if(inputChoice == 2)
             {
                 Environment.Exit(2);
@@ -35,8 +36,7 @@ namespace FileSystemManager
 
         public void firstMenu()
         {
-
-            Console.WriteLine("Choose from menu");
+            Console.WriteLine("Choose from menu: \n");
             Console.WriteLine("1. List all files");
             Console.WriteLine("2. List files by extension");
             Console.WriteLine("3. Get info about dracula.txt");
@@ -44,16 +44,15 @@ namespace FileSystemManager
             switch (inputChoice)
             {
                 case 1:
-                    Console.Write("List all files \n");
                     service.listAllFiles();
                     break;
 
                 case 2:
-                    secondMenu();
+                    extenstionMenu();
                     break;
 
                 case 3:
-                     thirdMenu();
+                     textFileMenu();
                     break;
                 
                default:
@@ -63,14 +62,16 @@ namespace FileSystemManager
 
         }
 
-        public void secondMenu()
+        public void extenstionMenu()
         {
-            Console.WriteLine("Select: ");
+            Console.WriteLine("Choose from menu: \n");
             Console.WriteLine("1. jpeg");
             Console.WriteLine("2. jfif");
             Console.WriteLine("3. png");
             Console.WriteLine("4. jpg");
+            //Checks valid input 1-4
             inputChoice = checkValidInput(1, 4);
+            //Switch service on input
             switch (inputChoice)
             {
                 case 1:
@@ -96,13 +97,15 @@ namespace FileSystemManager
 
         }
 
-        public void thirdMenu()
+        public void textFileMenu()
         {
-            Console.WriteLine("Select: ");
+            Console.WriteLine("Choose from menu: \n");
             Console.WriteLine("1. Get name and size of file");
             Console.WriteLine("2. Get number of lines of file");
             Console.WriteLine("3. Search for word in file");
+            //Checks valid input 1-3
             inputChoice = checkValidInput(1, 3);
+            //Switch service on input
             switch (inputChoice)
             {
                 case 1:
@@ -128,14 +131,12 @@ namespace FileSystemManager
         {
             var input = Console.ReadLine();
             int number;
-
             //Validates user input
             if (!int.TryParse(input, out number))
             {
                 Console.WriteLine("Please enter your choice as a single number:");
                 number = checkValidInput(min, max);
             }
-
             //Checks for valid input
             if (number >= min && number <= max)
             {
