@@ -36,7 +36,7 @@ Functionality:
   - How many times a specific word provided by user is found in the file. 
 
 ### LogBase: FileLogger
-Logs(writes) to file ("log.txt") found in Log folder
+Logs(writes) to file ("log.txt") found in Log folder(bin/debug)
 Logs all the results from fileservice with timestamp, functionality and duration of execution. 
 
 
